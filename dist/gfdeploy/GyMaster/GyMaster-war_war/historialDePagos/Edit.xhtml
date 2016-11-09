@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditHistorialDePagosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditHistorialDePagosLabel_historialDePagosPK_mes}" for="historialDePagosPK_mes" />
+                    <h:inputText id="historialDePagosPK_mes" value="#{historialDePagosController.selected.historialDePagosPK.mes}" title="#{bundle.EditHistorialDePagosTitle_historialDePagosPK_mes}" required="true" requiredMessage="#{bundle.EditHistorialDePagosRequiredMessage_historialDePagosPK_mes}"/>
+                    <h:outputLabel value="#{bundle.EditHistorialDePagosLabel_historialDePagosPK_cedula}" for="historialDePagosPK_cedula" />
+                    <h:inputText id="historialDePagosPK_cedula" value="#{historialDePagosController.selected.historialDePagosPK.cedula}" title="#{bundle.EditHistorialDePagosTitle_historialDePagosPK_cedula}" required="true" requiredMessage="#{bundle.EditHistorialDePagosRequiredMessage_historialDePagosPK_cedula}"/>
+                    <h:outputLabel value="#{bundle.EditHistorialDePagosLabel_historialDePagosPK_anio}" for="historialDePagosPK_anio" />
+                    <h:inputText id="historialDePagosPK_anio" value="#{historialDePagosController.selected.historialDePagosPK.anio}" title="#{bundle.EditHistorialDePagosTitle_historialDePagosPK_anio}" required="true" requiredMessage="#{bundle.EditHistorialDePagosRequiredMessage_historialDePagosPK_anio}"/>
+                    <h:outputLabel value="#{bundle.EditHistorialDePagosLabel_valor}" for="valor" />
+                    <h:inputText id="valor" value="#{historialDePagosController.selected.valor}" title="#{bundle.EditHistorialDePagosTitle_valor}" />
+                </h:panelGrid>
+                <h:commandLink action="#{historialDePagosController.update}" value="#{bundle.EditHistorialDePagosSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditHistorialDePagosViewLink}"/>
+                <br />
+                <h:commandLink action="#{historialDePagosController.prepareList}" value="#{bundle.EditHistorialDePagosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditHistorialDePagosIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

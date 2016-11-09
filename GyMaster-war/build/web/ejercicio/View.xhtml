@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewEjercicioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewEjercicioLabel_ejercicioPK_dia}"/>
+                    <h:outputText value="#{ejercicioController.selected.ejercicioPK.dia}" title="#{bundle.ViewEjercicioTitle_ejercicioPK_dia}"/>
+                    <h:outputText value="#{bundle.ViewEjercicioLabel_ejercicioPK_ordenSecuencia}"/>
+                    <h:outputText value="#{ejercicioController.selected.ejercicioPK.ordenSecuencia}" title="#{bundle.ViewEjercicioTitle_ejercicioPK_ordenSecuencia}"/>
+                    <h:outputText value="#{bundle.ViewEjercicioLabel_descripcion}"/>
+                    <h:outputText value="#{ejercicioController.selected.descripcion}" title="#{bundle.ViewEjercicioTitle_descripcion}"/>
+                    <h:outputText value="#{bundle.ViewEjercicioLabel_series}"/>
+                    <h:outputText value="#{ejercicioController.selected.series}" title="#{bundle.ViewEjercicioTitle_series}"/>
+                    <h:outputText value="#{bundle.ViewEjercicioLabel_repeticiones}"/>
+                    <h:outputText value="#{ejercicioController.selected.repeticiones}" title="#{bundle.ViewEjercicioTitle_repeticiones}"/>
+                    <h:outputText value="#{bundle.ViewEjercicioLabel_peso}"/>
+                    <h:outputText value="#{ejercicioController.selected.peso}" title="#{bundle.ViewEjercicioTitle_peso}"/>
+                    <h:outputText value="#{bundle.ViewEjercicioLabel_cliente1}"/>
+                    <h:outputText value="#{ejercicioController.selected.cliente1}" title="#{bundle.ViewEjercicioTitle_cliente1}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{ejercicioController.destroyAndView}" value="#{bundle.ViewEjercicioDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewEjercicioEditLink}"/>
+                <br />
+                <h:commandLink action="#{ejercicioController.prepareCreate}" value="#{bundle.ViewEjercicioCreateLink}" />
+                <br />
+                <h:commandLink action="#{ejercicioController.prepareList}" value="#{bundle.ViewEjercicioShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewEjercicioIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

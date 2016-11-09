@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListMedidasCorporalesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListMedidasCorporalesEmpty}" rendered="#{medidasCorporalesController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{medidasCorporalesController.items.rowCount > 0}">
+                    <h:outputText value="#{medidasCorporalesController.pagination.pageFirstItem + 1}..#{medidasCorporalesController.pagination.pageLastItem + 1}/#{medidasCorporalesController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{medidasCorporalesController.previous}" value="#{bundle.Previous} #{medidasCorporalesController.pagination.pageSize}" rendered="#{medidasCorporalesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{medidasCorporalesController.next}" value="#{bundle.Next} #{medidasCorporalesController.pagination.pageSize}" rendered="#{medidasCorporalesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{medidasCorporalesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_medidasCorporalesPK_fechaRegistro}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.medidasCorporalesPK.fechaRegistro}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_peso}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.peso}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_estatura}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.estatura}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_cintura}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cintura}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_cadera}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cadera}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_piernaI}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.piernaI}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_piernaD}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.piernaD}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_brazoI}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.brazoI}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_brazoD}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.brazoD}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_gluteoI}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.gluteoI}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_gluteoD}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.gluteoD}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_cuello}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cuello}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_hombroI}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hombroI}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_hombroD}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.hombroD}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_espalda}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.espalda}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListMedidasCorporalesTitle_cliente1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cliente1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{medidasCorporalesController.prepareView}" value="#{bundle.ListMedidasCorporalesViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{medidasCorporalesController.prepareEdit}" value="#{bundle.ListMedidasCorporalesEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{medidasCorporalesController.destroy}" value="#{bundle.ListMedidasCorporalesDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{medidasCorporalesController.prepareCreate}" value="#{bundle.ListMedidasCorporalesCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListMedidasCorporalesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

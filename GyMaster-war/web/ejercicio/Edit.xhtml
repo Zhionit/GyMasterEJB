@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEjercicioTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEjercicioLabel_ejercicioPK_dia}" for="ejercicioPK_dia" />
+                    <h:inputText id="ejercicioPK_dia" value="#{ejercicioController.selected.ejercicioPK.dia}" title="#{bundle.EditEjercicioTitle_ejercicioPK_dia}" required="true" requiredMessage="#{bundle.EditEjercicioRequiredMessage_ejercicioPK_dia}"/>
+                    <h:outputLabel value="#{bundle.EditEjercicioLabel_ejercicioPK_ordenSecuencia}" for="ejercicioPK_ordenSecuencia" />
+                    <h:inputText id="ejercicioPK_ordenSecuencia" value="#{ejercicioController.selected.ejercicioPK.ordenSecuencia}" title="#{bundle.EditEjercicioTitle_ejercicioPK_ordenSecuencia}" required="true" requiredMessage="#{bundle.EditEjercicioRequiredMessage_ejercicioPK_ordenSecuencia}"/>
+                    <h:outputLabel value="#{bundle.EditEjercicioLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{ejercicioController.selected.descripcion}" title="#{bundle.EditEjercicioTitle_descripcion}" required="true" requiredMessage="#{bundle.EditEjercicioRequiredMessage_descripcion}"/>
+                    <h:outputLabel value="#{bundle.EditEjercicioLabel_series}" for="series" />
+                    <h:inputText id="series" value="#{ejercicioController.selected.series}" title="#{bundle.EditEjercicioTitle_series}" required="true" requiredMessage="#{bundle.EditEjercicioRequiredMessage_series}"/>
+                    <h:outputLabel value="#{bundle.EditEjercicioLabel_repeticiones}" for="repeticiones" />
+                    <h:inputText id="repeticiones" value="#{ejercicioController.selected.repeticiones}" title="#{bundle.EditEjercicioTitle_repeticiones}" required="true" requiredMessage="#{bundle.EditEjercicioRequiredMessage_repeticiones}"/>
+                    <h:outputLabel value="#{bundle.EditEjercicioLabel_peso}" for="peso" />
+                    <h:inputText id="peso" value="#{ejercicioController.selected.peso}" title="#{bundle.EditEjercicioTitle_peso}" required="true" requiredMessage="#{bundle.EditEjercicioRequiredMessage_peso}"/>
+                    <h:outputLabel value="#{bundle.EditEjercicioLabel_cliente1}" for="cliente1" />
+                    <h:selectOneMenu id="cliente1" value="#{ejercicioController.selected.cliente1}" title="#{bundle.EditEjercicioTitle_cliente1}" required="true" requiredMessage="#{bundle.EditEjercicioRequiredMessage_cliente1}">
+                        <f:selectItems value="#{clienteController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{ejercicioController.update}" value="#{bundle.EditEjercicioSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEjercicioViewLink}"/>
+                <br />
+                <h:commandLink action="#{ejercicioController.prepareList}" value="#{bundle.EditEjercicioShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEjercicioIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

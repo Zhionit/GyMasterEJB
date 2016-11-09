@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewMedidasCorporalesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_medidasCorporalesPK_fechaRegistro}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.medidasCorporalesPK.fechaRegistro}" title="#{bundle.ViewMedidasCorporalesTitle_medidasCorporalesPK_fechaRegistro}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_peso}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.peso}" title="#{bundle.ViewMedidasCorporalesTitle_peso}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_estatura}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.estatura}" title="#{bundle.ViewMedidasCorporalesTitle_estatura}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_cintura}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.cintura}" title="#{bundle.ViewMedidasCorporalesTitle_cintura}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_cadera}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.cadera}" title="#{bundle.ViewMedidasCorporalesTitle_cadera}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_piernaI}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.piernaI}" title="#{bundle.ViewMedidasCorporalesTitle_piernaI}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_piernaD}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.piernaD}" title="#{bundle.ViewMedidasCorporalesTitle_piernaD}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_brazoI}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.brazoI}" title="#{bundle.ViewMedidasCorporalesTitle_brazoI}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_brazoD}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.brazoD}" title="#{bundle.ViewMedidasCorporalesTitle_brazoD}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_gluteoI}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.gluteoI}" title="#{bundle.ViewMedidasCorporalesTitle_gluteoI}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_gluteoD}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.gluteoD}" title="#{bundle.ViewMedidasCorporalesTitle_gluteoD}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_cuello}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.cuello}" title="#{bundle.ViewMedidasCorporalesTitle_cuello}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_hombroI}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.hombroI}" title="#{bundle.ViewMedidasCorporalesTitle_hombroI}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_hombroD}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.hombroD}" title="#{bundle.ViewMedidasCorporalesTitle_hombroD}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_espalda}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.espalda}" title="#{bundle.ViewMedidasCorporalesTitle_espalda}"/>
+                    <h:outputText value="#{bundle.ViewMedidasCorporalesLabel_cliente1}"/>
+                    <h:outputText value="#{medidasCorporalesController.selected.cliente1}" title="#{bundle.ViewMedidasCorporalesTitle_cliente1}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{medidasCorporalesController.destroyAndView}" value="#{bundle.ViewMedidasCorporalesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewMedidasCorporalesEditLink}"/>
+                <br />
+                <h:commandLink action="#{medidasCorporalesController.prepareCreate}" value="#{bundle.ViewMedidasCorporalesCreateLink}" />
+                <br />
+                <h:commandLink action="#{medidasCorporalesController.prepareList}" value="#{bundle.ViewMedidasCorporalesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewMedidasCorporalesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

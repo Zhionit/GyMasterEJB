@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditMedidasCorporalesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_medidasCorporalesPK_fechaRegistro}" for="medidasCorporalesPK_fechaRegistro" />
+                    <h:inputText id="medidasCorporalesPK_fechaRegistro" value="#{medidasCorporalesController.selected.medidasCorporalesPK.fechaRegistro}" title="#{bundle.EditMedidasCorporalesTitle_medidasCorporalesPK_fechaRegistro}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_medidasCorporalesPK_fechaRegistro}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_peso}" for="peso" />
+                    <h:inputText id="peso" value="#{medidasCorporalesController.selected.peso}" title="#{bundle.EditMedidasCorporalesTitle_peso}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_peso}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_estatura}" for="estatura" />
+                    <h:inputText id="estatura" value="#{medidasCorporalesController.selected.estatura}" title="#{bundle.EditMedidasCorporalesTitle_estatura}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_estatura}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_cintura}" for="cintura" />
+                    <h:inputText id="cintura" value="#{medidasCorporalesController.selected.cintura}" title="#{bundle.EditMedidasCorporalesTitle_cintura}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_cintura}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_cadera}" for="cadera" />
+                    <h:inputText id="cadera" value="#{medidasCorporalesController.selected.cadera}" title="#{bundle.EditMedidasCorporalesTitle_cadera}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_cadera}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_piernaI}" for="piernaI" />
+                    <h:inputText id="piernaI" value="#{medidasCorporalesController.selected.piernaI}" title="#{bundle.EditMedidasCorporalesTitle_piernaI}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_piernaI}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_piernaD}" for="piernaD" />
+                    <h:inputText id="piernaD" value="#{medidasCorporalesController.selected.piernaD}" title="#{bundle.EditMedidasCorporalesTitle_piernaD}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_piernaD}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_brazoI}" for="brazoI" />
+                    <h:inputText id="brazoI" value="#{medidasCorporalesController.selected.brazoI}" title="#{bundle.EditMedidasCorporalesTitle_brazoI}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_brazoI}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_brazoD}" for="brazoD" />
+                    <h:inputText id="brazoD" value="#{medidasCorporalesController.selected.brazoD}" title="#{bundle.EditMedidasCorporalesTitle_brazoD}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_brazoD}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_gluteoI}" for="gluteoI" />
+                    <h:inputText id="gluteoI" value="#{medidasCorporalesController.selected.gluteoI}" title="#{bundle.EditMedidasCorporalesTitle_gluteoI}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_gluteoI}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_gluteoD}" for="gluteoD" />
+                    <h:inputText id="gluteoD" value="#{medidasCorporalesController.selected.gluteoD}" title="#{bundle.EditMedidasCorporalesTitle_gluteoD}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_gluteoD}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_cuello}" for="cuello" />
+                    <h:inputText id="cuello" value="#{medidasCorporalesController.selected.cuello}" title="#{bundle.EditMedidasCorporalesTitle_cuello}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_cuello}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_hombroI}" for="hombroI" />
+                    <h:inputText id="hombroI" value="#{medidasCorporalesController.selected.hombroI}" title="#{bundle.EditMedidasCorporalesTitle_hombroI}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_hombroI}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_hombroD}" for="hombroD" />
+                    <h:inputText id="hombroD" value="#{medidasCorporalesController.selected.hombroD}" title="#{bundle.EditMedidasCorporalesTitle_hombroD}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_hombroD}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_espalda}" for="espalda" />
+                    <h:inputText id="espalda" value="#{medidasCorporalesController.selected.espalda}" title="#{bundle.EditMedidasCorporalesTitle_espalda}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_espalda}"/>
+                    <h:outputLabel value="#{bundle.EditMedidasCorporalesLabel_cliente1}" for="cliente1" />
+                    <h:selectOneMenu id="cliente1" value="#{medidasCorporalesController.selected.cliente1}" title="#{bundle.EditMedidasCorporalesTitle_cliente1}" required="true" requiredMessage="#{bundle.EditMedidasCorporalesRequiredMessage_cliente1}">
+                        <f:selectItems value="#{clienteController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{medidasCorporalesController.update}" value="#{bundle.EditMedidasCorporalesSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditMedidasCorporalesViewLink}"/>
+                <br />
+                <h:commandLink action="#{medidasCorporalesController.prepareList}" value="#{bundle.EditMedidasCorporalesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditMedidasCorporalesIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
